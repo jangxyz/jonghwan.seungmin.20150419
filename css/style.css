@@ -44,8 +44,10 @@ h1.title {
   padding-bottom: 28px;
   padding-left: 8px;
   padding-right: 8px;
+  /*
   margin-left: 4px;
   margin-right: 4px;
+  */
   border: 1px solid rgb(217,217,215);
   border-top: none;
   z-index: 90;
@@ -106,6 +108,26 @@ h1.title {
   margin-right: auto;
   margin-top : 16px;
   margin-bottom: 0;
+}
+.navbar.fixed {
+  position: fixed;
+  /*margin: 0 0 0 -20px;*/
+  margin: 0;
+  top: 0;
+  box-shadow: 0 4px 8px -6px #000;
+  z-index: 100;
+}
+.navbar.fixed a,
+.navbar.fixed ul.nav li a {
+  padding-top: 1px;
+  padding-bottom: 0;
+}
+.navbar.fixed .navbar-inner {
+  min-height: 25px;
+}
+
+.navbar.fixed + * {
+  padding-top: 70px;
 }
 
 .navbar-inner {
@@ -320,8 +342,4 @@ color: rgb(248, 70, 66);
 #gallery .swiper-container-horizontal > .swiper-pagination {
   bottom: 0px;
 }
-
-/*
- * bootstrap
- */
 

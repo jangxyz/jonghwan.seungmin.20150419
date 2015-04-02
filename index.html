@@ -61,12 +61,30 @@
 
 				}
 			});
+
+			// scrollspy
+			var $navbar = $('#navbar');
+			$navbar.css('width', $navbar.width());
+            $navbar.scrollspy({
+                min: $('#navbar').offset().top,
+				max: $('body').height(),
+				
+                onEnter: function(element, position) {
+                    $("#navbar").addClass('fixed');
+                },
+                onLeave: function(element, position) {
+                    $("#navbar").removeClass('fixed');
+                }
+            });
 		});
 	</script>
 
 	<!-- lightbox -->
 	<script src="lib/lightbox/js/lightbox.min.js"></script>
 	<link href="lib/lightbox/css/lightbox.css" rel="stylesheet" />
+
+	<!-- scrollspy -->
+	<script src="lib/jquery-scrollspy/jquery-scrollspy.js"></script>
 
     <!-- Update these with your own images
       <link rel="shortcut icon" href="images/favicon.ico">
@@ -78,10 +96,11 @@
 </head>
 
 <body class="cork">
-<div class="content paper" data-spy="scroll" data-target="#navbar">
+<div class="content paper">
+	<div id="top"></div>
 	<div id="navbar" class="navbar"> <!-- navbar-static-top"-->
 		<div class="navbar-inner">
-			<a class="brand" href="index.html"><i class="icon-heart red">&nbsp;</i></a>
+			<a class="brand" href="#top"><i class="icon-heart red">&nbsp;</i></a>
 			<ul class="nav pull-right">
 				<li><a href="#location">오시는 길</a></li>
 				<li><a href="#gallery">갤러리</a></li>
