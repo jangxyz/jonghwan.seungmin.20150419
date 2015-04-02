@@ -8,14 +8,15 @@
     <meta name="author" content="Janghwan Kim">
  	<meta name="robots" content="noindex" />
 
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
     <link href="css/font-awesome.min.css "rel="stylesheet" >
     <link href="css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <!--link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'-->
     <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
-
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
 	<!-- swiper -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/css/swiper.min.css">
@@ -77,10 +78,10 @@
 </head>
 
 <body class="cork">
-<div class="content paper">
-	<div class="navbar"> <!-- navbar-static-top"-->
+<div class="content paper" data-spy="scroll" data-target="#navbar">
+	<div id="navbar" class="navbar"> <!-- navbar-static-top"-->
 		<div class="navbar-inner">
-			<a class="brand" href=""><i class="icon-heart red">&nbsp;</i></a>
+			<a class="brand" href="index.html"><i class="icon-heart red">&nbsp;</i></a>
 			<ul class="nav pull-right">
 				<li><a href="#location">오시는 길</a></li>
 				<li><a href="#gallery">갤러리</a></li>
