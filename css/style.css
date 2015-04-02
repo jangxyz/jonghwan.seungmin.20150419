@@ -111,7 +111,6 @@ h1.title {
 }
 .navbar.fixed {
   position: fixed;
-  /*margin: 0 0 0 -20px;*/
   margin: 0;
   top: 0;
   box-shadow: 0 4px 8px -6px #000;
@@ -119,11 +118,13 @@ h1.title {
 }
 .navbar.fixed a,
 .navbar.fixed ul.nav li a {
+  /*
   padding-top: 1px;
   padding-bottom: 0;
+  */
 }
 .navbar.fixed .navbar-inner {
-  min-height: 25px;
+  /*min-height: 25px;*/
 }
 
 .navbar.fixed + * {
