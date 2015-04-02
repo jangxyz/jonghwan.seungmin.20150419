@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html prefix="og: http://ogp.me/ns#" lang="ko">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title>김종환 이승민 결혼합니다</title>
     <meta name="description" content="김장환 이승민 4/19 에 결혼합니다.">
     <meta name="author" content="Janghwan Kim">
- 	<meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex" />
 
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta property="og:title" content="김종환 이승민 결혼합니다" />
+    <meta property="og:description" content="김종환 이승민 2015.04.19 결혼식에 초대합니다.">
+    <meta property="og:image" content="http://jangxyz.github.io/jonghwan.seungmin.20150419/img/photos/img4_640x480.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://jangxyz.github.io/jonghwan.seungmin.20150419/index.html">
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -18,65 +24,65 @@
     <!--link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'-->
     <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 
-	<!-- swiper -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/css/swiper.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/js/swiper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/js/swiper.jquery.min.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.6/js/swiper.jquery.min.js"></script>
 
-	<!-- lightbox -->
-	<script src="lib/lightbox/js/lightbox.min.js"></script>
-	<link href="lib/lightbox/css/lightbox.css" rel="stylesheet" />
+    <!-- lightbox -->
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <link href="lib/lightbox/css/lightbox.css" rel="stylesheet" />
 
-	<!-- scrollspy -->
-	<script src="lib/jquery-scrollspy/jquery-scrollspy.js"></script>
+    <!-- scrollspy -->
+    <script src="lib/jquery-scrollspy/jquery-scrollspy.js"></script>
 
-	<script>
-		$(function() {
-			var swiper = new Swiper('.swiper-container', {
-				pagination: '.swiper-pagination',
-				paginationClickable: '.swiper-pagination',
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev',
-				setWrapperSize: true,
-				spaceBetween: 30,
-				loop: true,
-				//
-				updateOnImagesReady: true,
-				onImagesReady: function(swiper) {
+    <script>
+        $(function() {
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                setWrapperSize: true,
+                spaceBetween: 30,
+                loop: true,
+                //
+                updateOnImagesReady: true,
+                onImagesReady: function(swiper) {
 
-					var $img = swiper.slides.find('img');
+                    var $img = swiper.slides.find('img');
 
-					var maxLandscapeHeight = 0;
-					$img.each(function() {
-						var $el = $(this);
-						var width = $el.width(),
-						    height = $el.height(),
-							ratio = width / height;
-						// is landscape
-						if (ratio > 1) {
-							maxLandscapeHeight = Math.max(maxLandscapeHeight, height);
-						}
-					}).each(function() {
-						var $el = $(this);
-						var width = $el.width(),
-						    height = $el.height(),
-							ratio = width / height;
-						// is portrait
-						if (ratio < 1) {
-							$el.css('height', maxLandscapeHeight);
-						}
-					});
+                    var maxLandscapeHeight = 0;
+                    $img.each(function() {
+                        var $el = $(this);
+                        var width = $el.width(),
+                            height = $el.height(),
+                            ratio = width / height;
+                        // is landscape
+                        if (ratio > 1) {
+                            maxLandscapeHeight = Math.max(maxLandscapeHeight, height);
+                        }
+                    }).each(function() {
+                        var $el = $(this);
+                        var width = $el.width(),
+                            height = $el.height(),
+                            ratio = width / height;
+                        // is portrait
+                        if (ratio < 1) {
+                            $el.css('height', maxLandscapeHeight);
+                        }
+                    });
 
-				}
-			});
+                }
+            });
 
-			// scrollspy
-			var $navbar = $('#navbar');
-			$navbar.css('width', $navbar.width());
+            // scrollspy
+            var $navbar = $('#navbar');
+            $navbar.css('width', $navbar.width());
             $navbar.scrollspy({
                 min: $('#navbar').offset().top,
-				max: $('body').height(),
-				
+                max: $('body').height(),
+                
                 onEnter: function(element, position) {
                     $("#navbar").addClass('fixed');
                 },
@@ -85,19 +91,19 @@
                 }
             });
 
-			// scroll-to
-			$('.navbar a').on('click', function(ev) {
-				var $el = $(this);
-				if ($el.attr('href')[0] == '#') {
-					var $target = $($el.attr('href'));
-					$('html, body').animate({
-						scrollTop: $target.offset().top
-					}, 300);
-				}
-			});
+            // scroll-to
+            $('.navbar a').on('click', function(ev) {
+                var $el = $(this);
+                if ($el.attr('href')[0] == '#') {
+                    var $target = $($el.attr('href'));
+                    $('html, body').animate({
+                        scrollTop: $target.offset().top
+                    }, 300);
+                }
+            });
 
-		});
-	</script>
+        });
+    </script>
 
     <!-- Update these with your own images
       <link rel="shortcut icon" href="images/favicon.ico">
@@ -110,101 +116,101 @@
 
 <body class="cork">
 <div class="content paper">
-	<div id="top"></div>
-	<div id="navbar" class="navbar"> <!-- navbar-static-top"-->
-		<div class="navbar-inner">
-			<a class="brand" href="#top"><i class="icon-heart red">&nbsp;</i></a>
-			<ul class="nav pull-right">
-				<li><a href="#location">오시는 길</a></li>
-				<li><a href="#gallery">갤러리</a></li>
-				<li><a href="facilities.html">편의시설</a></li>
-				<!--li><a href="faq.html">자주 묻는 질문</a></li-->
-				<!--li><a href="guestbook.html">방명록</a></li-->
-			</ul>
-		</div>
-	</div>
+    <div id="top"></div>
+    <div id="navbar" class="navbar"> <!-- navbar-static-top"-->
+        <div class="navbar-inner">
+            <a class="brand" href="#top"><i class="icon-heart red">&nbsp;</i></a>
+            <ul class="nav pull-right">
+                <li><a href="#location">오시는 길</a></li>
+                <li><a href="#gallery">갤러리</a></li>
+                <li><a href="facilities.html">편의시설</a></li>
+                <!--li><a href="faq.html">자주 묻는 질문</a></li-->
+                <!--li><a href="guestbook.html">방명록</a></li-->
+            </ul>
+        </div>
+    </div>
 
-	<div class="index-logo">
-		<h1 class="title">저희 결혼합니다 &#9835;</h1>
-		<img alt="couple photo" src="img/photos/img4_640x480.jpg" >
-	</div>
+    <div class="index-logo">
+        <h1 class="title">저희 결혼합니다 &#9835;</h1>
+        <img alt="couple photo" src="img/photos/img4_640x480.jpg" >
+    </div>
 
-	<div class="ribbon">
-		<h4> <span class="name">김종환</span> &amp; <span class="name">이승민</span> </h4>
-	</div>
+    <div class="ribbon">
+        <h4> <span class="name">김종환</span> &amp; <span class="name">이승민</span> </h4>
+    </div>
 
-	<div class="message text-center inner-text">
-		있는 그대로의 나를 사랑해주는 사람<br>
-		꿈을 펼칠 수 있도록 날개가 되어주는 사람<br>
-		그 사람과 함께 삶의 여행을 떠나려 합니다.<br>
-		오셔서 많이 축복해 주시기 바랍니다.<br>
-	</div>
+    <div class="message text-center inner-text">
+        있는 그대로의 나를 사랑해주는 사람<br>
+        꿈을 펼칠 수 있도록 날개가 되어주는 사람<br>
+        그 사람과 함께 삶의 여행을 떠나려 합니다.<br>
+        오셔서 많이 축복해 주시기 바랍니다.<br>
+    </div>
 
-	<div id="info" class="info text-center inner-text">
-		<h4>일시 · 장소</h4>
+    <div id="info" class="info text-center inner-text">
+        <h4>일시 · 장소</h4>
 
-		<p class="date">
-			2015년 4월 19일 일요일 오후 1시
-		</p>
-		<span class="red">연세대학교 동문회관 3층 예식홀</span>
-		<br/>
-		<br/>
-		<div id="location" class="location">
-			<a href="img/map.jpg" data-lightbox="map"><img id="map" alt="location map" src="img/map.jpg"></a>
-			<div class='address'>
-				서울 서대문구 연세로 50 (신촌동 134) <br>
-				TEL 02-2123-4760~1 <br>
-			</div>
-		</div>
-	</div>
+        <p class="date">
+            2015년 4월 19일 일요일 오후 1시
+        </p>
+        <span class="red">연세대학교 동문회관 3층 예식홀</span>
+        <br/>
+        <br/>
+        <div id="location" class="location">
+            <a href="img/map.jpg" data-lightbox="map"><img id="map" alt="location map" src="img/map.jpg"></a>
+            <div class='address'>
+                서울 서대문구 연세로 50 (신촌동 134) <br>
+                TEL 02-2123-4760~1 <br>
+            </div>
+        </div>
+    </div>
 
-	<div id='how-to' class="how-to inner-text">
-		<h4>오시는 길</h4>
+    <div id='how-to' class="how-to inner-text">
+        <h4>오시는 길</h4>
 
-		<figure class='subway'><figcaption>지하철</figcaption>
-		<ul>
-			<li><em class='transport'>2호선 이대역</em> 1번 출구(100m) 직진 &rarr; 751번, 7017번 탑승 &rarr; 이대부중 하차
-			<li><em class='transport'>3호선 독립문역</em> 4번 출구 &rarr; 사거리에서 우회전 &rarr; 극동아파트 정류장에서 버스 승차 470, 601, 750A, 750B, 7737번
-		</ul></figure>
+        <figure class='subway'><figcaption>지하철</figcaption>
+        <ul>
+            <li><em class='transport'>2호선 이대역</em> 1번 출구(100m) 직진 &rarr; 751번, 7017번 탑승 &rarr; 이대부중 하차
+            <li><em class='transport'>3호선 독립문역</em> 4번 출구 &rarr; 사거리에서 우회전 &rarr; 극동아파트 정류장에서 버스 승차 470, 601, 750A, 750B, 7737번
+        </ul></figure>
 
-		<figure class="shuttle"><figcaption>셔틀버스</figcaption>
-		<ul>
-			<li>(12:20 / 12:40) <em>2호선 이대역 3번 출구</em> 앞 &rarr; 동문회관
-		</ul></figure>
+        <figure class="shuttle"><figcaption>셔틀버스</figcaption>
+        <ul>
+            <li>(12:20 / 12:40) <em>2호선 이대역 3번 출구</em> 앞 &rarr; 동문회관
+        </ul></figure>
 
-		<figure class="bus"><figcaption>버스</figcaption>
-		<ul>
-			<li><em class='transport'>간선버스(파랑)</em>: 272, 370, 470, 601, 606, 607, 672, 700, 707, 708, 710, 750(A,B), 751번
-			<li><em class='transport'>지선버스(초록)</em>: 6714, 7017, 7024, 7737번
-			<li><em class='transport'>광역버스(빨강)</em>: 567파주, 770고양, 76고양 / 공항버스 6011번
-		</ul></figure>
+        <figure class="bus"><figcaption>버스</figcaption>
+        <ul>
+            <li><em class='transport'>간선버스(파랑)</em>: 272, 370, 470, 601, 606, 607, 672, 700, 707, 708, 710, 750(A,B), 751번
+            <li><em class='transport'>지선버스(초록)</em>: 6714, 7017, 7024, 7737번
+            <li><em class='transport'>광역버스(빨강)</em>: 567파주, 770고양, 76고양 / 공항버스 6011번
+        </ul></figure>
 
-		<figure class='car'><figcaption>승용차</figcaption>
-		<p>
-			<em>동문회관 주차장</em> 이용 : 2시간 무료, 연세대학교 정문 방향에서 오시는 분은 <em>금화터널 고가도로</em> 밑에서 유턴하시면 됩니다. 2014년부터 신촌로터리-연세대 정문 도로는 '<em>차없는 거리</em>'로 지정돼 차량통행이 불가한 점 유념하세요. <br>
-			<em>휠체어 차량</em> 주차 관련은 <a href="facilities.html">여기</a>를 참고하세요.
-		</p>
-		</figure>
-	</div>
+        <figure class='car'><figcaption>승용차</figcaption>
+        <p>
+            <em>동문회관 주차장</em> 이용 : 2시간 무료, 연세대학교 정문 방향에서 오시는 분은 <em>금화터널 고가도로</em> 밑에서 유턴하시면 됩니다. 2014년부터 신촌로터리-연세대 정문 도로는 '<em>차없는 거리</em>'로 지정돼 차량통행이 불가한 점 유념하세요. <br>
+            <em>휠체어 차량</em> 주차 관련은 <a href="facilities.html">여기</a>를 참고하세요.
+        </p>
+        </figure>
+    </div>
 
-	<div id="gallery" class="info inner-text gallery last">
-		<h4>갤러리 </h4>
+    <div id="gallery" class="info inner-text gallery last">
+        <h4>갤러리 </h4>
 
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide"><a href="img/photos/img1.jpg" data-lightbox="gallery" data-title="2014년 6월 6일 / 부산 해운대 모래 축제" ><img src="img/photos/img1_640x480.jpg" alt= /></a><div class="description"><p class="title"> 부산 해운대 모래 축제 <span class="date">2014년 6월 6일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img2.jpg" data-lightbox="gallery" data-title="2014년 9월 21일 / 건대 롯데백화점" ><img src="img/photos/img2_360x480.jpg" alt=></a><div class="description"><p class="title"> 건대 롯데백화점 <span class="date">2014년 9월 21일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img3.jpg" data-lightbox="gallery" data-title="2014년 12월 31일 / 김종환의 생일날" ><img src="img/photos/img3_640x480.jpg" alt=></a><div class="description"><p class="title"> 김종환의 생일날 <span class="date">2014년 12월 31일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img4.jpg" data-lightbox="gallery" data-title="2014년 6월 6일 / 부산 보수동 책 골목" ><img src="img/photos/img4_640x480.jpg" alt=></a><div class="description"><p class="title"> 부산 보수동 책 골목 <span class="date">2014년 6월 6일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img5.jpg" data-lightbox="gallery" data-title="2013년 5월 5일 / 외대앞 달콤커피" ><img src="img/photos/img5_640x480.jpg" alt=></a><div class="description"><p class="title"> 외대앞 달콤커피 <span class="date">2013년 5월 5일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img6.jpg" data-lightbox="gallery" data-title="2013년 5월 5일 / 외대앞 달콤커피" ><img src="img/photos/img6_640x480.jpg" alt=></a><div class="description"><p class="title"> 외대앞 달콤커피 <span class="date">2013년 5월 5일</span> </p></div></div>
-				<div class="swiper-slide"><a href="img/photos/img7.jpg" data-lightbox="gallery" data-title="2013년 10월 20일 / 충무로 파스타집" ><img src="img/photos/img7_640x480.jpg" alt=></a><div class="description"><p class="title"> 충무로 파스타집 <span class="date">2013년 10월 20일</span> </p></div></div>
-			</div>
-			<div class="swiper-pagination"></div>
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
-		</div>
-	</div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="img/photos/img1.jpg" data-lightbox="gallery" data-title="2014년 6월 6일 / 부산 해운대 모래 축제" ><img src="img/photos/img1_640x480.jpg" alt= /></a><div class="description"><p class="title"> 부산 해운대 모래 축제 <span class="date">2014년 6월 6일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img2.jpg" data-lightbox="gallery" data-title="2014년 9월 21일 / 건대 롯데백화점" ><img src="img/photos/img2_360x480.jpg" alt=></a><div class="description"><p class="title"> 건대 롯데백화점 <span class="date">2014년 9월 21일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img3.jpg" data-lightbox="gallery" data-title="2014년 12월 31일 / 김종환의 생일날" ><img src="img/photos/img3_640x480.jpg" alt=></a><div class="description"><p class="title"> 김종환의 생일날 <span class="date">2014년 12월 31일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img4.jpg" data-lightbox="gallery" data-title="2014년 6월 6일 / 부산 보수동 책 골목" ><img src="img/photos/img4_640x480.jpg" alt=></a><div class="description"><p class="title"> 부산 보수동 책 골목 <span class="date">2014년 6월 6일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img5.jpg" data-lightbox="gallery" data-title="2013년 5월 5일 / 외대앞 달콤커피" ><img src="img/photos/img5_640x480.jpg" alt=></a><div class="description"><p class="title"> 외대앞 달콤커피 <span class="date">2013년 5월 5일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img6.jpg" data-lightbox="gallery" data-title="2013년 5월 5일 / 외대앞 달콤커피" ><img src="img/photos/img6_640x480.jpg" alt=></a><div class="description"><p class="title"> 외대앞 달콤커피 <span class="date">2013년 5월 5일</span> </p></div></div>
+                <div class="swiper-slide"><a href="img/photos/img7.jpg" data-lightbox="gallery" data-title="2013년 10월 20일 / 충무로 파스타집" ><img src="img/photos/img7_640x480.jpg" alt=></a><div class="description"><p class="title"> 충무로 파스타집 <span class="date">2013년 10월 20일</span> </p></div></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
 
 </div>
 
