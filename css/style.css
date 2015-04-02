@@ -250,16 +250,16 @@ color: rgb(248, 70, 66);
   margin-bottom: 0;
 }
 .swiper-slide .date {
-  position: absolute;
-  right: 0;
-
   padding-right: 7px;
   padding-bottom: 7px;
   font-size: 12px;
   color: #666;
 }
-.swiper-slide p.date:before {
-  content: "- ";
+.swiper-slide .date:before {
+  content: "(";
+}
+.swiper-slide .date:after {
+  content: ")";
 }
 /* pagiation */
 #gallery .swiper-container-horizontal > .swiper-pagination {
